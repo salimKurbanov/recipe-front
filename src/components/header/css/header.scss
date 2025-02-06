@@ -1,0 +1,76 @@
+@import './../../../style/common.scss';
+
+header.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;  
+    
+    @include mediaMinWidth(767) {
+        height: 136px;
+    }
+
+    & .logo {
+        @include mediaMaxWidth(767) {
+            display: none;
+        }
+    }
+
+    & nav {
+        display: flex;
+        align-items: center;
+        gap: 38px;
+        
+        .nav_item {
+            position: relative;
+            text-transform: capitalize;
+            @include adaptiveFont(18, 16);
+            color: var(--black);
+            transition: 0.3s;
+            font-weight: 500;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 50%;
+                width: 20px;
+                height: 3px;
+                background-color: var(--green);
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: 0.3s;
+            }
+
+            &.active {
+                color: var(--green);
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+
+            @include mediaMinWidth(992) {
+                &:hover {
+                    color: var(--green);
+                }
+            }
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    @include adaptiveProperty(gap, 20, 10);
+
+    & h2 {
+        color: var(--black);
+        font-size: 22px;
+    
+        & span {
+            color: var(--green);
+        }
+    }
+}

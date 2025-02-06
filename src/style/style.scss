@@ -78,7 +78,9 @@ input:-webkit-autofill:focus {
 // }
 
 .container {
+    width: 100%;
     max-width: 1500px;
-    @include adaptiveProperty(padding-right, 60px, 20px);
+    @include adaptiveProperty(padding-right, 60, 20);
+    @include adaptiveProperty(padding-left, 60, 20);
     margin: 0 auto;
 }

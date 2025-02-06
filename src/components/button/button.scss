@@ -1,0 +1,53 @@
+@import './../../style/common.scss';
+
+.main_button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: 0.3s;
+    
+    &.main {
+        padding: 0 20px;
+        height: 40px;
+        gap: 10px;
+        font-size: 16px;
+        border: 1px solid var(--black);
+        text-transform: capitalize;
+        border-radius: 8px;
+        background-color: transparent;
+
+        @include mediaMinWidth(992) {
+            &:hover {
+                background-color: var(--black);
+                color: var(--white);
+            }
+        }
+    }
+
+    &.full {
+        width: 100%;
+    }
+
+    &.square {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+
+        &.white {
+            background-color: var(--white);
+        }
+
+        &.black {
+            background-color: var(--black);
+        }
+    }
+
+    &.round {
+        height: 40px;
+        width: 40px;    
+        border-radius: 50%;
+        background-color: var(--black);
+    }
+}

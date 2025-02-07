@@ -8,7 +8,7 @@ export default function Navigation() {
     const path = usePathname()
 
     return (
-        <nav>
+        <nav className="header_nav">
             {Store.navigation.map((el, i) => (
                 <Link key={i} href={el.link} className={`nav_item ${path === el.link ? 'active' : ''}`}>{el.title}</Link>
             ))}

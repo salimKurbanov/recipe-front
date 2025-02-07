@@ -84,3 +84,10 @@ input:-webkit-autofill:focus {
     @include adaptiveProperty(padding-left, 60, 20);
     margin: 0 auto;
 }
+
+.line {
+	width: 87px;
+	height: 1px;
+	background-color: var(--grey);
+	flex-shrink: 0;
+}

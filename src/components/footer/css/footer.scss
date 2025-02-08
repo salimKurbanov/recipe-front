@@ -1,0 +1,95 @@
+@use './../../../style/common';
+
+footer.container {
+    margin-top: auto;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include common.adaptiveProperty(padding-top, 45, 24);
+    @include common.adaptiveProperty(padding-bottom, 45, 24);
+
+    .content {
+        display: flex;
+        align-items: center;
+        @include common.adaptiveProperty(gap, 30, 25);
+
+        & .logo {
+            & h2 {
+                color: var(--white);
+            }
+        }
+
+        .footer_line {
+            height: 87px;
+            width: 1px;
+            background-color: var(--grey);
+            flex-shrink: 0;
+        }
+
+        .mobile_text {
+            color: var(--grey);
+            font-size: 14px;
+            text-align: center;
+
+            @include common.mediaMinWidth(769) {
+                display: none;
+            }
+        }
+
+        & .add_recipe{
+            @include common.mediaMinWidth(769) {
+                display: none;
+            }
+        }
+
+        .navigation {
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                
+                .nav_item {
+                    color: var(--white);
+                    text-transform: lowercase;
+                    font-size: 14px;
+                }
+            }
+
+            .copyright {
+                color: var(--dark-grey);
+                margin-top: 17px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    @include common.mediaMaxWidth(768) {
+        flex-direction: column-reverse;
+        gap: 25px;
+
+        .content {
+            flex-direction: column;
+            gap: 25px;
+
+            & .logo {
+                display: none;
+            }
+    
+            .footer_line {
+                height: 1px;
+                width: 87px;
+            }
+    
+            .navigation {
+                nav {
+                   display: none;
+                }
+    
+                .copyright {
+                    margin-top: 0px;
+                }
+            }
+        }
+    }
+}

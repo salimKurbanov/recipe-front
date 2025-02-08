@@ -1,6 +1,7 @@
 import { Comfortaa } from "next/font/google";
 import './../style/style.scss';
 import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 
 const comfortaa = Comfortaa({
   variable: "--font-comfortaa",
@@ -21,6 +22,8 @@ export default function RootLayout({ children }) {
         <Header />
 
         {children}
+
+        <Footer />
       </body>
     </html>
   );

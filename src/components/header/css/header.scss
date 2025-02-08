@@ -1,0 +1,194 @@
+@use './../../../style/common.scss';
+
+header.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;  
+    @include common.adaptiveProperty(height, 136, 80);
+
+    & .logo {
+        @include common.mediaMaxWidth(767) {
+            display: none;
+        }
+    }
+
+    & nav.header_nav {
+        display: flex;
+        align-items: center;
+        gap: 38px;
+
+        @include common.mediaMaxWidth(992) {
+            display: none;
+        }
+        
+        .nav_item {
+            position: relative;
+            text-transform: capitalize;
+            color: var(--black);
+            transition: 0.3s;
+            font-weight: 500;
+            @include common.adaptiveFont(18, 16);
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 50%;
+                width: 20px;
+                height: 3px;
+                background-color: var(--green);
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: 0.3s;
+            }
+
+            &.active {
+                color: var(--green);
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+
+            @include common.mediaMinWidth(992) {
+                &:hover {
+                    color: var(--green);
+                }
+            }
+        }
+    }
+
+    .burger_btn {
+        display: flex;
+        flex-direction: column;
+        width: 35px;
+        flex-shrink: 0;
+        align-items: flex-end;
+        gap: 4px;
+
+        @include common.mediaMinWidth(991) {
+            display: none;
+        }
+
+        & span {
+            height: 4px;
+            border-radius: 1px;
+            background-color: var(--black);
+
+            &:nth-child(1) {
+                width: 35px;
+            }
+            &:nth-child(2) {
+                width: 25px;
+            }
+            &:nth-child(3) {
+                width: 30px;
+            }
+        }
+    }
+
+    .burger_menu {
+        position: fixed;
+        overflow: auto;
+        top: 0;
+        right: 0;
+        height: 100dvh;
+        background-color: var(--white);
+        width: 100%;
+        max-width: 400px;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+        box-shadow: -2px 1px 14px 6px #dddddd;
+        transform: translateX(100%);
+        transition: 0.8s;
+        @include common.adaptiveProperty(padding-bottom, 100, 20);
+
+        &.open {
+            transform: translateX(0);
+        }
+
+        .close {
+            align-self: flex-end;
+        }
+
+        .burger_nav{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            
+            .burger_item {
+                position: relative;
+                font-size: 26px;
+                text-transform: capitalize;
+                color: var(--black);
+                font-weight: 500;
+                width: max-content;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -8px;
+                    left: 50%;
+                    width: 20px;
+                    height: 3px;
+                    background-color: var(--green);
+                    transform: translateX(-50%);
+                    opacity: 0;
+                    transition: 0.3s;
+                }
+    
+                &.active {
+                    color: var(--green);
+    
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .burger_footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & .line {
+            margin: 14px 0;
+        }
+
+        & p.text {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.add_recipe {
+    @include common.mediaMaxWidth(992) {
+        display: none;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    @include common.adaptiveProperty(gap, 20, 10);
+
+    & h2 {
+        color: var(--black);
+        font-size: 22px;
+    
+        & span {
+            color: var(--green);
+        }
+    }
+}

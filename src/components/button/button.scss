@@ -1,4 +1,4 @@
-@import './../../style/common.scss';
+@use './../../style/common.scss';
 
 .main_button {
     position: relative;
@@ -7,6 +7,18 @@
     align-items: center;
     flex-shrink: 0;
     transition: 0.3s;
+    cursor: pointer;
+
+    .decor{
+        height: 29px;
+        width: 29px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background-color: var(--black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     
     &.main {
         padding: 0 20px;
@@ -18,11 +30,28 @@
         border-radius: 8px;
         background-color: transparent;
 
-        @include mediaMinWidth(992) {
+        @include common.mediaMinWidth(992) {
             &:hover {
                 background-color: var(--black);
                 color: var(--white);
             }
+        }
+
+        &.green {
+            border-color: var(--green);
+            color: var(--green);
+
+            & .decor {
+                background-color: var(--green);
+            }
+
+            @include common.mediaMinWidth(992) {
+                &:hover {
+                    background-color: var(--green);
+                    color: var(--white);
+                }
+            }
+    
         }
     }
 

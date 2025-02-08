@@ -72,6 +72,10 @@ header.container {
             display: none;
         }
 
+        @include common.mediaMaxWidth(768) {
+            margin-left: auto;
+        }
+
         & span {
             height: 4px;
             border-radius: 1px;

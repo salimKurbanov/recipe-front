@@ -81,8 +81,8 @@ input:-webkit-autofill:focus {
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
-    @include adaptiveProperty(padding-right, 60, 20);
-    @include adaptiveProperty(padding-left, 60, 20);
+    @include common.adaptiveProperty(padding-right, 60, 20);
+    @include common.adaptiveProperty(padding-left, 60, 20);
 }
 
 .line {

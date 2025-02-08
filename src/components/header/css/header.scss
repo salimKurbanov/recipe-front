@@ -26,10 +26,10 @@ header.container {
         .nav_item {
             position: relative;
             text-transform: capitalize;
-            @include common.adaptiveFont(18, 16);
             color: var(--black);
             transition: 0.3s;
             font-weight: 500;
+            @include common.adaptiveFont(18, 16);
 
             &::after {
                 content: '';
@@ -105,10 +105,10 @@ header.container {
         flex-direction: column;
         justify-content: space-between;
         padding: 20px;
-        @include common.adaptiveProperty(padding-bottom, 100, 20);
         box-shadow: -2px 1px 14px 6px #dddddd;
         transform: translateX(100%);
         transition: 0.8s;
+        @include common.adaptiveProperty(padding-bottom, 100, 20);
 
         &.open {
             transform: translateX(0);

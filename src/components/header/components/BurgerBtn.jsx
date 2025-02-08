@@ -4,44 +4,24 @@ import Button from "@/components/button/Button";
 import Store from "@/utils/Store";
 import Link from "next/link";
 import Social from "@/components/social/Social";
+import useBurger from "../hooks/useBurger";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
 
 export default function BurgerBtn () {
-    const [isOpen, setIsOpen] = useState(false)
-    
+
     const path = usePathname()
-    
-    const openMenu = (e) => {
-        e.stopPropagation()
-        document.body.style.overflow = 'hidden'
-        setIsOpen(prev => prev = true)
-    }
-
-    const closeMenu = useCallback(() => {
-        setIsOpen(prev => prev = false)
-        document.body.style.overflow = 'visible'
-    }, [isOpen])
-
-    useEffect(() => {
-        if(isOpen && window.innerWidth < 993) {
-
-            window.addEventListener('click', () => closeMenu())
-
-            return window.removeEventListener('click', () => closeMenu())
-        }
-    }, [isOpen])
+    const burger = useBurger()
     
     return (
         <>
-            <button className="burger_btn" onClick={openMenu}>
+            <button className="burger_btn" onClick={burger.openMenu}>
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             
-            <div className={`burger_menu ${isOpen ? 'open' : ''}`} onClick={(e) => e.stopPropagation()}>
-                <Button onClick={closeMenu} mode={`square black close`}>
+            <div className={`burger_menu ${burger.isOpen ? 'open' : ''}`} onClick={(e) => e.stopPropagation()}>
+                <Button onClick={burger.closeMenu} mode={`square black close`}>
                     <svg width="11.499969" height="10.000977" viewBox="0 0 11.5 10.001">
                         <defs/>
                         <rect id="Прямоугольник 1" y="8.975342" rx="0.762356" width="13.341237" height="1.524713" transform="rotate(-42.2732 0.000000 8.975342)" fill="#FFFFFF" fillOpacity="1.000000"/>

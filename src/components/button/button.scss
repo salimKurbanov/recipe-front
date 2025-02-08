@@ -1,4 +1,4 @@
-@import './../../style/common.scss';
+@use './../../style/common.scss';
 
 .main_button {
     position: relative;
@@ -30,7 +30,7 @@
         border-radius: 8px;
         background-color: transparent;
 
-        @include mediaMinWidth(992) {
+        @include common.mediaMinWidth(992) {
             &:hover {
                 background-color: var(--black);
                 color: var(--white);
@@ -45,7 +45,7 @@
                 background-color: var(--green);
             }
 
-            @include mediaMinWidth(992) {
+            @include common.mediaMinWidth(992) {
                 &:hover {
                     background-color: var(--green);
                     color: var(--white);

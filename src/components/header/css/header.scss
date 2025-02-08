@@ -1,4 +1,4 @@
-@import './../../../style/common.scss';
+@use './../../../style/common.scss';
 
 header.container {
     position: relative;
@@ -6,10 +6,10 @@ header.container {
     align-items: center;
     justify-content: space-between;
     gap: 20px;  
-    @include adaptiveProperty(height, 136, 80);
+    @include common.adaptiveProperty(height, 136, 80);
 
     & .logo {
-        @include mediaMaxWidth(767) {
+        @include common.mediaMaxWidth(767) {
             display: none;
         }
     }
@@ -19,14 +19,14 @@ header.container {
         align-items: center;
         gap: 38px;
 
-        @include mediaMaxWidth(992) {
+        @include common.mediaMaxWidth(992) {
             display: none;
         }
         
         .nav_item {
             position: relative;
             text-transform: capitalize;
-            @include adaptiveFont(18, 16);
+            @include common.adaptiveFont(18, 16);
             color: var(--black);
             transition: 0.3s;
             font-weight: 500;
@@ -52,7 +52,7 @@ header.container {
                 }
             }
 
-            @include mediaMinWidth(992) {
+            @include common.mediaMinWidth(992) {
                 &:hover {
                     color: var(--green);
                 }
@@ -68,7 +68,7 @@ header.container {
         align-items: flex-end;
         gap: 4px;
 
-        @include mediaMinWidth(991) {
+        @include common.mediaMinWidth(991) {
             display: none;
         }
 
@@ -105,7 +105,7 @@ header.container {
         flex-direction: column;
         justify-content: space-between;
         padding: 20px;
-        @include adaptiveProperty(padding-bottom, 100, 20);
+        @include common.adaptiveProperty(padding-bottom, 100, 20);
         box-shadow: -2px 1px 14px 6px #dddddd;
         transform: translateX(100%);
         transition: 0.8s;
@@ -173,7 +173,7 @@ header.container {
 }
 
 .add_recipe {
-    @include mediaMaxWidth(992) {
+    @include common.mediaMaxWidth(992) {
         display: none;
     }
 }
@@ -181,7 +181,7 @@ header.container {
 .logo {
     display: flex;
     align-items: center;
-    @include adaptiveProperty(gap, 20, 10);
+    @include common.adaptiveProperty(gap, 20, 10);
 
     & h2 {
         color: var(--black);

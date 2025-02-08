@@ -1,10 +1,11 @@
 import { Comfortaa } from "next/font/google";
 import './../style/style.scss';
+import Header from "@/components/header/Header";
 
 const comfortaa = Comfortaa({
   variable: "--font-comfortaa",
   subsets: ['latin', 'cyrillic'],
-  weight: ['300', '400', '600', '700'],
+  weight: ['300', '400', '500', '600', '700'],
   display: 'swap'
 });
 
@@ -17,6 +18,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru" className={`${comfortaa.variable} `}>
       <body>
+        <Header />
+
         {children}
       </body>
     </html>

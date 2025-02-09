@@ -93,7 +93,8 @@ input:-webkit-autofill:focus {
 }
 
 .add_favorites_btn{
-	position: absolute;
+	position: absolute !important;
 	top: 10px;
 	left: 10px;
+	z-index: 2;
 }

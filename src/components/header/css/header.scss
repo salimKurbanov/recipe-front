@@ -36,7 +36,7 @@ header.container {
                 position: absolute;
                 bottom: -8px;
                 left: 50%;
-                width: 20px;
+                width: 0px;
                 height: 3px;
                 background-color: var(--green);
                 transform: translateX(-50%);
@@ -48,6 +48,7 @@ header.container {
                 color: var(--green);
 
                 &::after {
+                    width: 20px;
                     opacity: 1;
                 }
             }

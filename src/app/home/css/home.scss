@@ -2,6 +2,7 @@
 
 .home.container {
     display: flex;
+    @include common.adaptiveProperty(gap, 40, 20);
 
     .content{
         display: flex;
@@ -20,20 +21,119 @@
 
         & p.text {
             width: 100%;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 500;
             color: var(--grey);
+            margin-top: 20px;
             margin-bottom: 50px;
         }
     }
 
-    .splide {
-        .splide_track {
-
+    .slider_container {
+        flex: 1;
+        
+        .splide {
+            width: 100%;
+    
+            .splide_track {
+    
+            }
+    
+            .splide__slide {
+                position: relative;
+                border-radius: 10px;
+                overflow: hidden; 
+                @include common.adaptiveProperty(width, 340, 226);
+                @include common.adaptiveProperty(height, 500, 315);
+                
+                .wrapper_link {
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+    
+                    .recipe_image {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                        z-index: 1;
+                    }
+        
+                    .description {
+                        position: relative;
+                        border-radius: 8px;
+                        backdrop-filter: blur(20px);
+                        background: var(--background-blur);
+                        padding-top: 14px;
+                        padding-bottom: 14px;
+                        z-index: 2;
+                        @include common.adaptiveProperty(padding-left, 14, 10);
+                        @include common.adaptiveProperty(padding-right, 14, 10);
+    
+                        .score {
+                            display: flex;
+                            gap: 5px;
+                        }
+    
+                        & h3 {
+                            font-weight: 600;
+                            height: 2lh;
+                            color: var(--white);
+                            margin-top: 9px;
+                            margin-bottom: 5px;
+                            @include common.adaptiveFont(26, 16);
+                        }
+    
+                        & p.ingredients {
+                            display: -webkit-box;
+                            height: 2lh;
+                            line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            color: var(--grey);
+                            @include common.adaptiveFont(16, 12);
+                        }
+    
+                        .utility {
+                            margin-top: 10px;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+    
+                            .time, 
+                            .portions {
+                                display: flex;
+                                gap: 4px;
+                                color: var(--green);
+                                @include common.adaptiveFont(16, 14);
+                            }
+    
+                            .utility_line {
+                                width: 1px;
+                                height: 14px;
+                                flex-shrink: 0;
+                                border-radius: 2px;
+                                background-color: var(--green);
+                            }
+                        }
+                    }
+                }
+            }
         }
-
-        .splide__slide {
-            
+    
+        .custom_arrows {
+            width: max-content;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
     }
 }

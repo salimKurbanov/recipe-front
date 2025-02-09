@@ -91,3 +91,9 @@ input:-webkit-autofill:focus {
 	background-color: var(--grey);
 	flex-shrink: 0;
 }
+
+.add_favorites_btn{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}

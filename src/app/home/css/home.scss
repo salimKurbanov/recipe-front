@@ -1,0 +1,39 @@
+@use './../../../style/common';
+
+.home.container {
+    display: flex;
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 300px;
+        flex-shrink: 0;
+        align-self: stretch;
+
+        & h1 {
+            width: 100%;
+            color: var(--black);
+            font-weight: 700;
+            @include common.adaptiveFont(40, 26);
+        }
+
+        & p.text {
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--grey);
+            margin-bottom: 50px;
+        }
+    }
+
+    .splide {
+        .splide_track {
+
+        }
+
+        .splide__slide {
+            
+        }
+    }
+}

@@ -17,18 +17,6 @@ export default function Slider () {
 
     const splideRef = useRef(null);
 
-    const handlePrev = () => {
-      if (splideRef.current) {
-        splideRef.current.splide.go('<'); // Перейти к предыдущему слайду
-      }
-    };
-  
-    const handleNext = () => {
-      if (splideRef.current) {
-        splideRef.current.splide.go('>'); // Перейти к следующему слайду
-      }
-    };
-
     return (
         <div className="slider_container">
             <Splide
@@ -96,7 +84,7 @@ export default function Slider () {
                 <div className="control">
                     <Pagination splideRef={splideRef}/>
 
-                    <Arrows handlePrev={handlePrev} handleNext={handleNext}/>
+                    <Arrows splideRef={splideRef}/>
                 </div>
             </Splide>
 

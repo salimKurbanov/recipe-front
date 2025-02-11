@@ -1,6 +1,18 @@
 import Button from "@/components/button/Button";
 
-export default function Arrows ({ handleNext, handlePrev}) {
+export default function Arrows ({ splideRef }) {
+
+    const handlePrev = () => {
+        if (splideRef.current) {
+        splideRef.current.splide.go('<'); // Перейти к предыдущему слайду
+        }
+    };
+    
+    const handleNext = () => {
+        if (splideRef.current) {
+        splideRef.current.splide.go('>'); // Перейти к следующему слайду
+        }
+    };
 
     return (
         <div className="custom_arrows">

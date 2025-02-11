@@ -1,0 +1,218 @@
+@use './../../../style/common';
+
+.home.container {
+    display: flex;
+    margin-bottom: 40px;
+    @include common.adaptiveProperty(gap, 40, 20);
+    
+    @include common.mediaMinWidth(993) {
+        margin-top: auto;
+    }
+    
+    @include common.mediaMaxWidth(768) {
+        flex-direction: column;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        width: 100%;
+        max-width: 300px;
+        flex-shrink: 0;
+        align-self: stretch;
+
+        & h1 {
+            width: 100%;
+            color: var(--black);
+            font-weight: 700;
+            @include common.adaptiveFont(40, 26);
+            
+            @include common.mediaMinWidth(769) {
+                margin-top: 70px;
+            }
+        }
+
+        & p.text {
+            width: 100%;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--grey);
+            margin-top: 20px;
+            margin-bottom: 50px;
+
+            @include common.mediaMaxWidth(768) {
+                display: none;
+            }
+        }
+
+        & .main_button {
+            &.desc {
+                @include common.mediaMaxWidth(768) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .slider_container {
+        flex: 1;
+        overflow: hidden;
+
+        & .main_button {
+            &.mob {
+                margin-top: 35px;
+                max-width: 320px;
+                margin-left: auto;
+                margin-right: auto;
+
+                @include common.mediaMinWidth(769) {
+                    display: none;
+                }
+            }
+        }
+        
+        .splide {
+            min-width: 0;
+    
+            .splide__slide {
+                position: relative;
+                border-radius: 10px;
+                overflow: hidden; 
+                @include common.adaptiveProperty(width, 340, 226);
+                @include common.adaptiveProperty(height, 500, 315);
+                
+                .wrapper_link {
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+    
+                    .recipe_image {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                        z-index: 1;
+                    }
+        
+                    .description {
+                        position: relative;
+                        border-radius: 8px;
+                        backdrop-filter: blur(20px);
+                        background: var(--background-blur);
+                        padding-top: 14px;
+                        padding-bottom: 14px;
+                        z-index: 2;
+                        @include common.adaptiveProperty(padding-left, 14, 10);
+                        @include common.adaptiveProperty(padding-right, 14, 10);
+    
+                        .score {
+                            display: flex;
+                            gap: 5px;
+                        }
+    
+                        & h3 {
+                            font-weight: 600;
+                            height: 2lh;
+                            color: var(--white);
+                            margin-top: 9px;
+                            margin-bottom: 5px;
+                            @include common.adaptiveFont(26, 16);
+                        }
+    
+                        & p.ingredients {
+                            display: -webkit-box;
+                            height: 2lh;
+                            line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            color: var(--grey);
+                            @include common.adaptiveFont(16, 12);
+                        }
+    
+                        .utility {
+                            margin-top: 10px;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+    
+                            .time, 
+                            .portions {
+                                display: flex;
+                                gap: 4px;
+                                color: var(--green);
+                                @include common.adaptiveFont(16, 14);
+                            }
+    
+                            .utility_line {
+                                width: 1px;
+                                height: 14px;
+                                flex-shrink: 0;
+                                border-radius: 2px;
+                                background-color: var(--green);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .control {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            justify-content: flex-end;
+            margin-top: 20px;
+
+            @include common.mediaMaxWidth(500) {
+                justify-content: space-between;
+            }
+        }
+
+        .custom_arrows {
+            width: max-content;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .custom_pagination {
+            display: flex;
+            align-items: center;
+            @include common.adaptiveProperty(gap, 10, 5);
+
+            .dot {
+                padding: 0px;
+                position: relative;
+                flex-shrink: 0;
+                background-color: var(--black);
+                transition: 0.8s;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                border-radius: 5px;
+                overflow: hidden;
+                width: 8px;
+                height: 8px;
+                will-change: width;
+
+                &.active {
+                    width: 40px;
+                }
+
+                .custom_progress {
+                    position: relative;
+                    border-radius: 5px;
+                    height: 100%;
+                    width: 100%;
+                    background-color: var(--green);
+                }
+            }
+        }
+    }
+}

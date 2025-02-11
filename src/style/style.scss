@@ -83,6 +83,10 @@ input:-webkit-autofill:focus {
     margin: 0 auto;
     @include common.adaptiveProperty(padding-right, 60, 20);
     @include common.adaptiveProperty(padding-left, 60, 20);
+
+	@include common.mediaMaxWidth(768) {
+		padding-top: 100px;
+	}
 }
 
 .line {
@@ -90,4 +94,11 @@ input:-webkit-autofill:focus {
 	height: 1px;
 	background-color: var(--grey);
 	flex-shrink: 0;
+}
+
+.add_favorites_btn{
+	position: absolute !important;
+	top: 10px;
+	left: 10px;
+	z-index: 2;
 }

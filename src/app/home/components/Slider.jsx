@@ -55,9 +55,7 @@ export default function Slider () {
                         1400: {
                             perPage: 3,
                             perMove: 1,
-                        },
-                        768: {
-                        },
+                        }
                     }
                 }}
                 hasTrack={false}

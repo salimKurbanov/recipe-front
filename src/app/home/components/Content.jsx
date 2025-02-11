@@ -8,7 +8,7 @@ export default function Content () {
 
             <p className="text">Выберите один из рецептов, или перейдите в каталог</p>
 
-            <Button mode={'main'}>
+            <Button mode={'main desc'}>
                 Перейти к рецептам
                 
                 <div className="decor">

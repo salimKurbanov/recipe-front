@@ -83,6 +83,10 @@ input:-webkit-autofill:focus {
     margin: 0 auto;
     @include common.adaptiveProperty(padding-right, 60, 20);
     @include common.adaptiveProperty(padding-left, 60, 20);
+
+	@include common.mediaMaxWidth(768) {
+		padding-top: 100px;
+	}
 }
 
 .line {

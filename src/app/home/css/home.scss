@@ -2,13 +2,23 @@
 
 .home.container {
     display: flex;
+    margin-bottom: 40px;
     @include common.adaptiveProperty(gap, 40, 20);
+    
+    @include common.mediaMinWidth(993) {
+        margin-top: auto;
+    }
+    
+    @include common.mediaMaxWidth(768) {
+        flex-direction: column;
+    }
 
     .content{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        width: 300px;
+        // justify-content: center;
+        width: 100%;
+        max-width: 300px;
         flex-shrink: 0;
         align-self: stretch;
 
@@ -17,6 +27,10 @@
             color: var(--black);
             font-weight: 700;
             @include common.adaptiveFont(40, 26);
+            
+            @include common.mediaMinWidth(769) {
+                margin-top: 70px;
+            }
         }
 
         & p.text {
@@ -26,18 +40,40 @@
             color: var(--grey);
             margin-top: 20px;
             margin-bottom: 50px;
+
+            @include common.mediaMaxWidth(768) {
+                display: none;
+            }
+        }
+
+        & .main_button {
+            &.desc {
+                @include common.mediaMaxWidth(768) {
+                    display: none;
+                }
+            }
         }
     }
 
     .slider_container {
         flex: 1;
+        overflow: hidden;
+
+        & .main_button {
+            &.mob {
+                margin-top: 35px;
+                max-width: 320px;
+                margin-left: auto;
+                margin-right: auto;
+
+                @include common.mediaMinWidth(769) {
+                    display: none;
+                }
+            }
+        }
         
         .splide {
-            width: 100%;
-    
-            .splide_track {
-    
-            }
+            min-width: 0;
     
             .splide__slide {
                 position: relative;
@@ -127,13 +163,56 @@
                 }
             }
         }
-    
+        
+        .control {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            justify-content: flex-end;
+            margin-top: 20px;
+
+            @include common.mediaMaxWidth(500) {
+                justify-content: space-between;
+            }
+        }
+
         .custom_arrows {
             width: max-content;
-            margin-left: auto;
             display: flex;
             align-items: center;
             gap: 15px;
+        }
+
+        .custom_pagination {
+            display: flex;
+            align-items: center;
+            @include common.adaptiveProperty(gap, 10, 5);
+
+            .dot {
+                padding: 0px;
+                position: relative;
+                flex-shrink: 0;
+                background-color: var(--black);
+                transition: 0.8s;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                border-radius: 5px;
+                overflow: hidden;
+                width: 8px;
+                height: 8px;
+                will-change: width;
+
+                &.active {
+                    width: 40px;
+                }
+
+                .custom_progress {
+                    position: relative;
+                    border-radius: 5px;
+                    height: 100%;
+                    width: 100%;
+                    background-color: var(--green);
+                }
+            }
         }
     }
 }

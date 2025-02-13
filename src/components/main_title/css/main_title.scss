@@ -1,0 +1,7 @@
+@use './../../../style/common';
+
+
+h2.main_title {
+    color: var(--black);
+    @include common.adaptiveFont(32, 26);
+}

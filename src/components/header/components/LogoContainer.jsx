@@ -9,7 +9,7 @@ export default function LogoContainer () {
 
     return (
         <div className="logo_container">
-            {path !== '/' && window.innerWidth < 786 ?
+            {typeof window !== "undefined" && path !== '/' && window.innerWidth < 786 ?
                 <Button mode={'square black'}>
                     <svg width="4.982300" height="8.659180" viewBox="0 0 4.9823 8.65918" fill="none">
                         <defs/>

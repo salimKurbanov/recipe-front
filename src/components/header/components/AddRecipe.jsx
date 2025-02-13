@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function AddRecipe () {
     return (
-        <Link href={'/'} className="add_recipe">
+        <Link href={'/add_recipe'} className="add_recipe">
             <Button mode={'main green'}>
                 Добавить рецепт
                 <div className="decor">

@@ -77,5 +77,9 @@
         width: 40px;    
         border-radius: 50%;
         background-color: var(--black);
+
+        &.grey {
+            background-color: var(--background-grey);
+        }
     }
 }

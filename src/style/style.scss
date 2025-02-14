@@ -65,12 +65,12 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:active,
 input:-webkit-autofill:focus {
-    background-color: #131313 !important;
-    color: white !important;
-    -webkit-box-shadow: 0 0 0 1000px #131313 inset !important;
-    -webkit-text-fill-color: white !important;
+    background-color: var(--background-grey) !important;
+    color: var(--dark-grey) !important;
+    -webkit-box-shadow: 0 0 0 1000px var(--background-grey) inset !important;
+    -webkit-text-fill-color: var(--dark-grey) !important;
     transition: background-color 0s 600000s, color 0s 600000s;
-    caret-color: white;
+    caret-color: var(--dark-grey);
 }
 
 // *::-webkit-scrollbar {

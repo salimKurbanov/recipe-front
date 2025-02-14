@@ -1,5 +1,36 @@
 @use './../../../style/common';
 
 .input_wrapper {
+    flex: 1;
     
+    .main_input {
+        min-width: 0;
+        background-color: var(--background-grey);
+        border-radius: 20px;
+        height: 40px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        color: var(--dark-grey);
+        font-size: 16px;
+
+        &::placeholder {
+            color: var(--grey);
+            font-size: 16px;
+        }
+    }
+
+    &.small {
+        width: max-content;
+        
+        .main_input {
+            padding: 0 12px;
+        }
+    }
+
+    &.full {
+        .main_input {
+            width: 100%;
+        }
+    }
 }

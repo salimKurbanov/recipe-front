@@ -1,0 +1,19 @@
+@use './../../../style/common';
+
+.text_area {
+    width: 100%;
+    background-color: var(--background-grey);
+    font-size: 16px;
+    height: max-content;
+    min-height: 40px;
+    resize: none;
+    overflow: hidden;
+    padding: 11px 20px;
+    border-radius: 20px;
+    color: var(--dark-grey);
+    
+    &::placeholder {
+        color: var(--grey);
+        font-size: 16px;
+    }
+}

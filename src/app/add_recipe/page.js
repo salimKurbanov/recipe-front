@@ -12,7 +12,7 @@ export default function AddRecipe () {
             <div className="content">
                 <MainImage />
 
-               <AddForm />
+                <AddForm />
             </div>
         </div>
     )

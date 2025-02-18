@@ -18,7 +18,6 @@ export default function MainImage () {
 
     return (
         <div className="main_image">
-
             <label className="image_wrapper" htmlFor="add_recipe_input">
                 {image ?
                     <Image 

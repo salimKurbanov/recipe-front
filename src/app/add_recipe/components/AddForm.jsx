@@ -1,6 +1,7 @@
 import MainInfo from "./MainInfo";
 import Ingredients from "./Ingredients";
 import Proces from "./Proces";
+import SendForm from "./SendForm";
 
 export default function AddForm () {
 
@@ -11,6 +12,8 @@ export default function AddForm () {
             <Ingredients />
 
             <Proces />
+
+            <SendForm />
         </div>
     )
 }

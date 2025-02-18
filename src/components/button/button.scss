@@ -81,5 +81,10 @@
         &.grey {
             background-color: var(--background-grey);
         }
+
+        &.small {
+            height: 36px;
+            width: 36px;
+        }
     }
 }
